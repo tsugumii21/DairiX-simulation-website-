@@ -116,3 +116,4 @@ This project is a **UI/UX Simulation** developed for professional demonstration 
   <p>© 2025 DairiX Manufacturing. All Rights Reserved.</p>
 
 </div>
+# DairiX-simulation-website-
