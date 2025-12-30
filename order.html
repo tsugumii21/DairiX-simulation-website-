@@ -481,6 +481,23 @@
                 <label for="companyName">Organization</label>
                 <input type="text" id="companyName" placeholder="DairiX Solutions Inc.">
               </div>
+              <div class="field-wrapper">
+                <label for="acquisitionType">Acquisition Type</label>
+                <select id="acquisitionType">
+                  <option value="" disabled selected>Select Option</option>
+                  <option value="ownership">Full Ownership</option>
+                  <option value="rent">Rental / Lease</option>
+                </select>
+              </div>
+              <div class="field-wrapper" id="rentalDurationWrapper" style="display: none;">
+                <label for="rentalDuration">Rental Duration</label>
+                <select id="rentalDuration">
+                  <option value="" disabled selected>Select Duration</option>
+                  <option value="6m">6 Months (Pilot)</option>
+                  <option value="12m">12 Months (Standard)</option>
+                  <option value="24m">24 Months (Enterprise)</option>
+                </select>
+              </div>
               <div class="field-wrapper full">
                 <label for="deploymentAddress">Target Deployment Address</label>
                 <input type="text" id="deploymentAddress" placeholder="123 Innovation St, BGC, Taguig">
@@ -726,6 +743,18 @@
         if (e.target.classList.contains('modal-overlay')) closeModal();
       });
 
+      // Toggle Rental Duration
+      const acquisitionType = document.getElementById('acquisitionType');
+      const rentalDurationWrapper = document.getElementById('rentalDurationWrapper');
+      
+      acquisitionType.addEventListener('change', () => {
+        if (acquisitionType.value === 'rent') {
+          rentalDurationWrapper.style.display = 'flex';
+        } else {
+          rentalDurationWrapper.style.display = 'none';
+        }
+      });
+
       let stage = 0;
       const stages = [
         { fill: '25%', text: 'Reviewing Documents' },
@@ -749,9 +778,11 @@
         const cName = document.getElementById('companyName').value;
         const dAddr = document.getElementById('deploymentAddress').value;
         const uQty = document.getElementById('unitQuantity').value;
+        const aType = document.getElementById('acquisitionType').value;
+        const rDur = document.getElementById('rentalDuration').value;
 
-        if (!bName || !cName || !dAddr || !uQty) {
-          showNotification('Missing Details', 'Please complete the Deployment Configuration form (Name, Company, Address, and Fleet Size) before proceeding.');
+        if (!bName || !cName || !dAddr || !uQty || !aType || (aType === 'rent' && !rDur)) {
+          showNotification('Missing Details', 'Please complete the Deployment Configuration form (including Acquisition Type and Duration if renting) before proceeding.');
           return;
         }
 
