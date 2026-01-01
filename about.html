@@ -196,7 +196,7 @@
         transition: all 0.3s ease;
       }
 
-      .form-group input:focus, 
+      .form-group input:focus,
       .form-group textarea:focus {
         border-color: #fff;
         outline: none;
@@ -229,13 +229,13 @@
         }
         #inquiryForm {
           grid-template-columns: 1fr;
-        }
+      }
         .form-group.full-width {
           grid-column: span 1;
         }
         .btn-submit {
           grid-column: span 1;
-        }
+      }
       }
 
       /* Navigation Overrides */
@@ -254,9 +254,7 @@
     <!-- Header -->
     <header class="header">
       <div class="header-container">
-        <a href="index.html" class="logo">
-          <img src="images/logo.png" alt="DairiX Logo" />
-        </a>
+        <a href="index.html" class="logo">DairiX</a>
 
         <div class="nav-right">
           <a href="index.html" class="nav-link desktop-only">Home</a>
@@ -309,8 +307,8 @@
             <div class="feature-image">
               <img src="images/rover on street 02.png" alt="DairiX technical design" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
             </div>
+            </div>
           </div>
-        </div>
       </section>
 
       <!-- Section 2: Technical Intelligence -->
@@ -360,7 +358,7 @@
             From modern business districts to traditional community streets, 
             DairiX is engineered to navigate the diverse and challenging urban 
             landscapes of the Philippines with ease and safety.
-          </p>
+              </p>
         </div>
       </section>
 
@@ -456,6 +454,36 @@
             </div>
           </div>
         </div>
+
+      <!-- Technical Blueprint Section -->
+      <section style="background: #000; padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">System Architecture</h2>
+            <p style="color: #8e8e93; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+              Our technical blueprint showcases the precision engineering behind the DairiX platform. 
+              From the high-capacity electric powertrain to the sophisticated LiDAR sensor array, 
+              every component is architected for maximum efficiency and safety in urban environments.
+            </p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+            <img src="images/DairiX Blueprint.png" alt="DairiX Technical Blueprint" style="width: 100%; height: auto; border-radius: 10px; filter: brightness(1.1) contrast(1.05);">
+            <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
+              <div>
+                <span style="display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #8e8e93; margin-bottom: 10px;">Primary Array</span>
+                <p style="color: #fff; font-weight: 500;">LiDAR & Ultrasonic Fusion</p>
+              </div>
+              <div>
+                <span style="display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #8e8e93; margin-bottom: 10px;">Energy Matrix</span>
+                <p style="color: #fff; font-weight: 500;">Dual Battery Modules</p>
+              </div>
+              <div>
+                <span style="display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #8e8e93; margin-bottom: 10px;">Interface</span>
+                <p style="color: #fff; font-weight: 500;">Digital Display Unit</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Call to Action -->
@@ -509,8 +537,12 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer-content">
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="DairiX Logo">
+          <p>Dairy Rover PH</p>
+        </div>
         <div class="footer-links">
-          <a href="#">DairiX © 2025</a>
+          <a href="index.html">DairiX © 2025</a>
           <a href="privacy.html">Privacy & Legal</a>
           <a href="contact.html">Contact</a>
         </div>
@@ -523,14 +555,14 @@
       const currentInquiryForm = document.getElementById('inquiryForm');
       if (currentInquiryForm) {
         currentInquiryForm.addEventListener('submit', (e) => {
-          e.preventDefault();
+        e.preventDefault();
           if (window.showModernModal) {
             window.showModernModal('Inquiry Received', 'Thank you! Our engineering team will review your inquiry and contact you soon.');
           } else {
             alert('Thank you! Our engineering team will review your inquiry.');
           }
           e.target.reset();
-        });
+      });
       }
     </script>
   </body>
