@@ -108,7 +108,7 @@ aemyy-project/
 
 ## 👥 Lead Developer
 
-- **Visionary & Architect:** [Raikiel Aemroe Hermogenes](https://github.com/tsugumii21) — _The Brain behind DairiX_
+- **Visionary & Architect:** [Raikiel Aemroe Hermogenes]— _The Brain behind DairiX_
 - **Developer:** [Allen P. Del Valle](https://github.com/tsugumii21)
 
 ---
